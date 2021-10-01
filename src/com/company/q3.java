@@ -10,21 +10,23 @@ public class q3 {
 //    Output : 4
 
     static int findNonRepeat(int Array3[], int n) {
-        Arrays.sort(Array3);
-        int special = Array3[0];
-
-        for (int i = 0; i < n; i++) {
-            if (Array3[i] != Array3[i + 1]) {
-                special = Array3[i];
+        for(int i=0; i<n; i++){
+            int j;
+            for (j=0; j<n; j++) {
+                if (i != j &&Array3[i] == Array3[j]){
+                    break;
+                }
             }
-
+            if (j==n){
+                return Array3[i];
+            }
         }
-        return special;
+        return -1;
     }
 
     public static void main(String[] args) {
         // write your code here
-        int Array3[] = {2, 2, 3, 4, 7, 7, 9, 11, 11, 9};
+        int Array3[] = {2, 2, 3, 4, 7, 7, 3, 4, 11, 1};
         int n = Array3.length;
         System.out.println(findNonRepeat(Array3, n));
     }
