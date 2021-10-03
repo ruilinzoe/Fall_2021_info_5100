@@ -1,47 +1,32 @@
 package com.company;
 
+import javax.xml.transform.Result;
+
 public class q5 {
-    public static boolean DigitNum(String str, int n)
-    {
+    public static boolean DigitNum(String str){
+        boolean m=true;
+        boolean n=true;
+
+        for(int i=0; i<str.length()-1; i++){
+            m=Character.isDigit(str.charAt(i));
+            n=Character.isDigit(str.charAt(i+1));
+            if (m==n){
+                return false;
+            }
+        }
+        return true;
         // Traverse the string from
         // start to end
-        for (int i = 0; i < n; i++) {
 
-            // Check if character is
-            // digit from 0-9
-            // then return true
-            // else false
-            if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
-                    str=str+1;
-                    if (str.matches(".*[a-z].*")) {
-                        return true;
-                    }
-                    else {
-                        return false;
-                    }
-            }
-
-            if (str.matches(".*[a-z].*")) {
-                str=str+1;
-                if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-
-        }
-        return false;
     }
 
     public static void main(String args[])
     {
         // Given string str
-        String str = "1a1a";
+        String str = "a1a1";
         int len = str.length();
         // Function Call
-        System.out.println(DigitNum(str, len));
+        System.out.println(DigitNum(str));
     }
 
 
