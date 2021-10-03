@@ -4,13 +4,13 @@ import javax.xml.transform.Result;
 
 public class q5 {
     public static boolean DigitNum(String str){
-        boolean m=true;
-        boolean n=true;
+        boolean a=true;
+        boolean b=true;
 
         for(int i=0; i<str.length()-1; i++){
-            m=Character.isDigit(str.charAt(i));
-            n=Character.isDigit(str.charAt(i+1));
-            if (m==n){
+            a=Character.isDigit(str.charAt(i));
+            b=Character.isDigit(str.charAt(i+1));
+            if (a==b){
                 return false;
             }
         }
