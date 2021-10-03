@@ -7,6 +7,7 @@ public class q5 {
         boolean a=true;
         boolean b=true;
 
+        //compare if it is digit after digit
         for(int i=0; i<str.length()-1; i++){
             a=Character.isDigit(str.charAt(i));
             b=Character.isDigit(str.charAt(i+1));
