@@ -14,7 +14,7 @@ public class repeatSum {
         for (int i=0; i<nums.length; i++){
             if(!map.containsKey(nums[i])){
                 map.put(nums[i],1);
-                arr.add(nums[1]);
+                arr.add(nums[i]);
             }else {
                 map.put(nums[i], map.getOrDefault(nums[i],1)+1);
             }
